@@ -5,8 +5,8 @@ function AddProduct() {
     ProductType: "",
     ProductImage: null,
     ProductDescription: "",
-    MSP: "",
-    MRA: "",
+    MSP: "", //minimum selling price
+    MRA: "", //minimum raise amount
     SellDate: "",
     SellTime: "",
   });
@@ -20,7 +20,7 @@ function AddProduct() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(fromData);
+    console.log(formData);
   };
 
   return (
@@ -32,7 +32,7 @@ function AddProduct() {
             type="text"
             placeholder="eg. Table, Mobile Phone, Pen, etc"
             name="ProductType"
-            value={ProductType}
+            value={formData.ProductType}
             onChange={handleChange}
             required
           />
@@ -43,7 +43,7 @@ function AddProduct() {
             type="file"
             name="ProductImage"
             accept="image/*"
-            value={ProductImage}
+            value={formData.ProductImage}
             onChange={handleChange}
             required
           />
@@ -54,7 +54,7 @@ function AddProduct() {
             type="text"
             placeholder="Enter Product Description"
             name="ProductDescription"
-            value={ProductDesciption}
+            value={formData.ProductDescription}
             onChange={handleChange}
             required
           />
@@ -65,7 +65,7 @@ function AddProduct() {
             type="text"
             placeholder="Initial price of Product"
             name="MSP"
-            value={MSP}
+            value={formData.MSP}
             onChange={handleChange}
             required
           />
@@ -76,7 +76,7 @@ function AddProduct() {
             type="text"
             placeholder="Minimum raise"
             name="MRA"
-            value={MRA}
+            value={formData.MRA}
             onChange={handleChange}
             required
           />
@@ -86,7 +86,7 @@ function AddProduct() {
           <input
             type="date"
             name="SellDate"
-            value={SellDate}
+            value={formData.SellDate}
             onChange={handleChange}
             required
           />
@@ -96,7 +96,7 @@ function AddProduct() {
           <input
             type="time"
             name="SellTime"
-            value={SellTime}
+            value={formData.SellTime}
             onChange={handleChange}
             required
           />
