@@ -1,0 +1,70 @@
+
+.landing_page{
+    padding: 25px;
+}
+
+.search_icon{
+    width: 20px;
+    height: 20px;
+}
+
+.cards{
+    display: grid; 
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto; 
+    flex: 1;
+    gap: 70px;
+    padding: 0;
+    margin: 0;
+}
+
+.logo_image{
+    width: 200px;
+    margin-top: -10px;
+    margin-left: -10px;
+}
+
+.description{
+    margin-left: 15px;
+}
+.description h2{
+    font-size: 25px;
+    font-weight: bold;
+}
+.product_box{
+    border-radius: 5%;
+    background-color: rgba(216, 212, 212, 0.466);
+    height: 350px;
+    width: 250px;
+    display: inline;
+    place-items: center;
+    align-content: center;
+    gap: 20px;
+}
+
+
+.product_image{
+    height: 250px;
+    object-fit: cover;
+    align-self: center;
+    border-radius: 5%;
+}
+
+.category_button{
+    width: 100px;
+    border-radius: 50%;
+    margin-top: 50px;
+    height: 100px;
+}
+
+.categories{
+    width: 150px;
+    justify-items: center;
+    margin-bottom: 0px;
+}
+
+.categories_container{
+    display: flex;
+    gap: 50px;
+}
+
