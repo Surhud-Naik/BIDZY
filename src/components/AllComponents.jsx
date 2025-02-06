@@ -1,4 +1,4 @@
-import React,{useState} from 'react';
+import React,{useState,useEffect} from 'react';
 import './style.css'
 import Image2 from '../assets/searchicon.png'
 import Fashion from '../assets/fashion.png'
@@ -8,46 +8,48 @@ import Acc from '../assets/acc.png'
 import Laptop from '../assets/laptop.png'
 import Gadget from '../assets/gadget.png'
 
+export const ProductCard = () => {
+  const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-export const ProductCard = () =>{
-  const [products,setProducts]=useState([]);
-  const [loading,setLoading]=useState(true); 
+  useEffect(() => {
+    fetch("/api/products")
+      .then((response) => response.json())
+      .then((data) => {
+        setProducts(data);
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.error("Error fetching products: ", err);
+        setLoading(false);
+      });
+  }, []);
 
-  useEffect(()=>{
-    fetch('/api/products')
-    .then(response => response.json())
-    .then(data => {
-      setProducts(data);
-      setLoading(false);
-    })
-    .catch(err => {
-      console.error('Error fetching products: ',err);
-      setLoading(false);
-    });
-  }.[]);
-
-  return (
-    
-  {loading ? (
+  return loading ? (
     <p>Loading Products ...</p>
   ) : (
     <div className="card-container">
-        <div className="product_box">
-        {products.map(product => (
+      <div className="product_box">
+        {products.map((product) => (
           <div className="description" key={product.id}>
-          <img className="product_image" src={product.image} alt={product.name} />
-          <h2>{product.name}</h2>
-          <p className="details">{product.description}</p>
-          <p className="price">{product.price}</p>
-          <button className="button">Buy Now!</button><br></br>
-          <button className="bidbutton">Bid Now!</button>
-        </div>
+            <img
+              className="product_image"
+              src={product.image}
+              alt={product.name}
+            />
+            <h2>{product.name}</h2>
+            <p className="details">{product.description}</p>
+            <p className="price">{product.price}</p>
+            <button className="button">Buy Now!</button>
+            <br />
+            <button className="bidbutton">Bid Now!</button>
+          </div>
         ))}
-        </div>
-      )}
+      </div>
     </div>
   );
 };
+
 
 
 export const SearchBar = () => {
