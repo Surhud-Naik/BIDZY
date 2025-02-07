@@ -52,23 +52,30 @@ function AddProduct() {
   };
 
   return (
-    <div className="m-0 p-0">
-      <navbar className="top-0 left-0 w-full h-20 text-white py-4 px-5 flex justify-between items-center border-b-2">
-        <img src={Image3} className="w-[200px] mt-2 -ml-1"></img>
-        <img
-          src={HomeIcon}
-          alt="homeicon"
-          className="h-20 max-w-full justify-center mr-2 cursor-pointer"
-        ></img>
-        <div>
-          <img
-            src={UserImage}
-            className="cursor-pointer h-20 max-w-full"
-            alt="UserImage"
-            //onClick
-          ></img>
-        </div>
-      </navbar>
+    <div className="m-0 pt-[25px]">
+      <div className="px-[25px]">
+        <navbar className="top-0 left-0 w-full h-20 py-4 flex justify-between items-center border-b-2">
+          <img src={Image3} className="w-[200px] mt-2 -ml-1"></img>
+          <a href="..">
+            <img
+              src={HomeIcon}
+              alt="homeicon"
+              className="h-20 max-w-full justify-center mr-24 cursor-pointer"
+            ></img>
+          </a>
+          <div className="text-2xl border border-black">
+            <a href="/add-product">Add Product</a>
+          </div>
+          <div>
+            <img
+              src={UserImage}
+              className="cursor-pointer h-20 max-w-full"
+              alt="UserImage"
+              //onClick
+            ></img>
+          </div>
+        </navbar>
+      </div>
 
       <div className="mt-10">
         <div className="flex text-4xl -mt-6 mb-7 font-extrabold align-center justify-center ">
@@ -299,10 +306,10 @@ function AddProduct() {
                 </div>
               </div>
             </div>
-            <div className="flex items-center justify-center">
+            <div className="flex items-center justify-center ">
               <button
                 type="submit"
-                className="px-4 py-2 border-2 w-72 font-bold bg-[rgba(62,156,53,255)] text-white rounded-md hover:bg-green-600 shadow-[9px_8px_15px_rgba(0,0,0,0.3)] active:scale-90 transition-transform"
+                className="px-4 py-6 mr-20 -mt-20 border-2 w-72 font-bold text-lg bg-[rgba(62,156,53,255)] text-white rounded-md hover:bg-green-600 shadow-[9px_8px_15px_rgba(0,0,0,0.3)] active:scale-90 transition-transform"
               >
                 Add Product
               </button>
