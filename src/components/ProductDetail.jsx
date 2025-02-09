@@ -2,44 +2,16 @@ import React, { useRef, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { FaShoppingCart } from "react-icons/fa";
 import Logo from '../assets/Logo.png';
-
+import { useLocation } from "react-router-dom";
 import 'swiper/css';
 import 'swiper/css/pagination';
 
 import './productDetail.css';
 import { Mousewheel, Pagination } from 'swiper/modules';
 function ProductDetailPage() {
-    const products = [
-        {
-          image: 'https://www.zebrs.com/uploads/zebrs/products/1-927694058174310_l.jpg?v=423',
-          name: 'Realme Narzo 70 Turbo',
-          basePrice: '10,000',
-          currentPrice: '70,000',
-          expiresOn: '30 February 2025',
-        },
-        {
-          image: 'https://www.zebrs.com/uploads/zebrs/products/1-927694058174310_l.jpg?v=423',
-          name: 'Realme Narzo 70 Turbo',
-          basePrice: '10,000',
-          currentPrice: '70,000',
-          expiresOn: '30 February 2025',
-        },
-        {
-          image: 'https://www.zebrs.com/uploads/zebrs/products/1-927694058174310_l.jpg?v=423',
-          name: 'Realme Narzo 70 Turbo',
-          basePrice: '10,000',
-          currentPrice: '70,000',
-          expiresOn: '30 February 2025',
-        },
-        {
-          image: 'https://www.zebrs.com/uploads/zebrs/products/1-927694058174310_l.jpg?v=423',
-          name: 'Realme Narzo 70 Turbo',
-          basePrice: '10,000',
-          currentPrice: '70,000',
-          expiresOn: '30 February 2025',
-        },
-      ];
-  return (
+  const location = useLocation();
+  const product = (location.state?.product);
+       return (
     <div className="min-h-screen bg-gray-100">
       <header className="bg-white shadow-md px-4 py-2 flex flex-col">
         <div className="flex justify-between items-center px-5 py-3">
@@ -70,11 +42,11 @@ function ProductDetailPage() {
         className="mySwiper"
       >
         {
-            products.map((product, index) => (
-                <SwiperSlide key={index}>
+            
+                <SwiperSlide>
                 <img src={product.image} alt={product.name} className="w-full h-64 object-cover rounded-lg" />
                 </SwiperSlide>
-            ))
+            
         }
       </Swiper>
       <button className='absolute top-3 right-3 z-10 bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded'>
