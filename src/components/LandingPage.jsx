@@ -15,6 +15,13 @@ import HomeIcon from "../assets/homeicon.png";
 import UserImage from "..//assets/userprofile.png";
 
 function LandingPage() {
+    const product = [{
+        image: 'https://www.zebrs.com/uploads/zebrs/products/1-927694058174310_l.jpg?v=423',
+        name: 'Realme Narzo 70 Turbo',
+        basePrice: '10,000',
+        currentPrice: '70,000',
+        expiresOn: '30 February 2025',
+      }]
   return (
     <div className="landing_page">
       <div>
