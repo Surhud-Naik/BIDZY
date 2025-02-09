@@ -20,7 +20,7 @@ export const ProductCard = () => {
         setLoading(false);
       })
       .catch((err) => {
-        console.error("Error fetching products: ", err);
+        // console.error("Error fetching products: ", err);
         setLoading(false);
       });
   }, []);
