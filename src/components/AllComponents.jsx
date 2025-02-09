@@ -1,12 +1,12 @@
-import React,{useState,useEffect} from 'react';
-import './style.css'
-import Image2 from '../assets/searchicon.png'
-import Fashion from '../assets/fashion.png'
-import Mobile from '../assets/mobile.png'
-import Elec from '../assets/elec.png'
-import Acc from '../assets/acc.png'
-import Laptop from '../assets/laptop.png'
-import Gadget from '../assets/gadget.png'
+import React, { useState, useEffect } from 'react';
+import './style.css';
+import Image2 from '../assets/searchicon.png';
+import Fashion from '../assets/fashion.png';
+import Mobile from '../assets/mobile.png';
+import Elec from '../assets/elec.png';
+import Acc from '../assets/acc.png';
+import Laptop from '../assets/laptop.png';
+import Gadget from '../assets/gadget.png';
 
 export const ProductCard = () => {
   const [products, setProducts] = useState([]);
@@ -16,11 +16,32 @@ export const ProductCard = () => {
     fetch("/api/products")
       .then((response) => response.json())
       .then((data) => {
-        setProducts(data);
+        if (data.length === 0) {
+          setProducts([
+            {
+              id: 1,
+              name: "Default Product",
+              description: "This is a default product description.",
+              price: "$99.99",
+              image: ""
+            }
+          ]);
+        } else {
+          setProducts(data);
+        }
         setLoading(false);
       })
       .catch((err) => {
         console.error("Error fetching products: ", err);
+        setProducts([
+          {
+            id: 1,
+            name: "Default Product",
+            description: "This is a default product description.",
+            price: "$99.99",
+            image: "https://via.placeholder.com/150"
+          }
+        ]);
         setLoading(false);
       });
   }, []);
@@ -50,16 +71,14 @@ export const ProductCard = () => {
   );
 };
 
-
-
 export const SearchBar = () => {
   return (
-      <div style={{display: "flex"}}>
-        <img className="search_icon" src={Image2} alt="" /> 
-        <input placeholder="Search Item"></input>
-      </div>
-  )
-}
+    <div style={{ display: "flex" }}>
+      <img className="search_icon" src={Image2} alt="" />
+      <input placeholder="Search Item"></input>
+    </div>
+  );
+};
 
 export const FashionCat = () => {
   return (
@@ -69,8 +88,8 @@ export const FashionCat = () => {
       </button>
       <p>Fashion</p>
     </div>
-  )
-}
+  );
+};
 
 export const MobileCat = () => {
   return (
@@ -80,8 +99,8 @@ export const MobileCat = () => {
       </button>
       <p>Mobile</p>
     </div>
-  )
-}
+  );
+};
 
 export const ElecCat = () => {
   return (
@@ -91,8 +110,8 @@ export const ElecCat = () => {
       </button>
       <p>Electronics</p>
     </div>
-  )
-}
+  );
+};
 
 export const LaptopCat = () => {
   return (
@@ -102,8 +121,8 @@ export const LaptopCat = () => {
       </button>
       <p>Laptop</p>
     </div>
-  )
-}
+  );
+};
 
 export const AccCat = () => {
   return (
@@ -113,8 +132,8 @@ export const AccCat = () => {
       </button>
       <p>Accessories</p>
     </div>
-  )
-}
+  );
+};
 
 export const GadgetCat = () => {
   return (
@@ -124,7 +143,5 @@ export const GadgetCat = () => {
       </button>
       <p>Gadgets</p>
     </div>
-  )
-}
-
-
+  );
+};
