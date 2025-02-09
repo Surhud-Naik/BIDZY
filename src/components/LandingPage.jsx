@@ -99,7 +99,6 @@ function LandingPage() {
           <ProductCard />
         </div>
       </div>
->>>>>>> 492c0487cc2b1a452d8f5e839944a199d86648e9
     </div>
   );
 }
