@@ -204,7 +204,7 @@ function AddProduct() {
                         <label className="mr-2" htmlFor="yep">
                           <input
                             type="radio"
-                            name="FirstHand"
+                            name="BoughtFrom"
                             id="yep"
                             value="yes"
                             checked={formData.BoughtFrom === "yes"}
@@ -216,7 +216,7 @@ function AddProduct() {
                           <input
                             type="radio"
                             id="nope"
-                            name="FirstHand"
+                            name="BoughtFrom"
                             value="no"
                             checked={formData.BoughtFrom === "no"}
                             onChange={handleChange}
