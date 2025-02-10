@@ -5,6 +5,7 @@ import HomeIcon from "../assets/homeicon.png";
 
 function AddProduct() {
   const [images, setImages] = useState([]);
+  const [openProfile, setOpenProfile] = useState(false);
   const [formData, setFormData] = useState({
     ProductType: "",
     ProductImage: null,
@@ -28,7 +29,6 @@ function AddProduct() {
       [e.target.name]: e.target.value,
     });
   };
-
   const handleImageChange = (e) => {
     const files = e.target.files;
     const imageArray = Array.from(files).map((file) => {
@@ -71,13 +71,27 @@ function AddProduct() {
               src={UserImage}
               className="cursor-pointer h-20 max-w-full"
               alt="UserImage"
-              //onClick
-            ></img>
+              onClick={() => setOpenProfile(!openProfile)}
+            />
           </div>
         </navbar>
       </div>
 
       <div className="mt-10">
+        <div>
+          {openProfile && (
+            <div className=" absolute right-32 -translate-y-20 px-4 bg-gray-200 border border-gray-400 rounded-lg">
+              <div>UserName: Surhud</div>
+              <div>PassWord: Capybara</div>
+              <div>
+                <button className="border border-black hover:bg-slate-600">
+                  Logout
+                </button>
+              </div>
+            </div>
+          )}
+        </div>
+
         <div className="flex text-4xl -mt-6 mb-7 font-extrabold align-center justify-center ">
           Add Product
         </div>
@@ -309,7 +323,7 @@ function AddProduct() {
             <div className="flex items-center justify-center ">
               <button
                 type="submit"
-                className="px-4 py-6 mr-20 -mt-20 border-2 w-72 font-bold text-lg bg-[rgba(62,156,53,255)] text-white rounded-md hover:bg-green-600 shadow-[9px_8px_15px_rgba(0,0,0,0.3)] active:scale-90 transition-transform"
+                className="px-4 py-6 mr-20 -mt-14 border-2 w-72 font-bold text-lg bg-[rgba(62,156,53,255)] text-white rounded-md hover:bg-green-600 shadow-[9px_8px_15px_rgba(0,0,0,0.3)] active:scale-90 transition-transform"
               >
                 Add Product
               </button>
