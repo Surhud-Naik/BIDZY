@@ -1,8 +1,14 @@
-# React + Vite
+# React + Vite 
+This project was a collaborative effort with four other beginner developers.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# My contributions:
 
-Currently, two official plugins are available:
+1) Developed the Navbar
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+2)Built the Add Product page
+
+You can access the Add Product page through the Navbar on the website.
+
+# Running the project 
+git clone
+npm run dev
